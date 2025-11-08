@@ -4,12 +4,11 @@ import subprocess
 # This class performs the initial subdomain enumeration using subfinder, dnsx, and ffuf
 class SubdomainEnumerator:
 
-    def __init__(self):
-        self.target_domain = ""
+    def __init__(self, configuration):
         self.domain_name = ""
+        self.config = configuration
     
     def run(self):
-        self.target_domain = input("Please input the target domain: ").strip()
         self.setup_domain_name()
         self.collector()
         self.check_alive()
@@ -18,7 +17,7 @@ class SubdomainEnumerator:
 
     # This function sets up the domain name
     def setup_domain_name(self):
-        domainparts = self.target_domain.split('.')
+        domainparts = self.config.target.split('.')
         for part in domainparts[:-1]:
             if part == domainparts[-2]:
                 self.domain_name += part.lower()
@@ -28,10 +27,11 @@ class SubdomainEnumerator:
 
     # This funtion collects the subdomains of the target domain
     def collector(self):
-        print(f"running subfinder for {self.target_domain}...")
+        print(f"running subfinder for {self.config.target}...")
         subprocess.run(
-            ["subfinder", "-d", self.target_domain, "-o", f"domains-{self.domain_name}.txt"],
-            check=True
+            ["subfinder", "-d", self.config.target, "-o", f"domains-{self.domain_name}.txt", "-silent"],
+            check=True,
+            stdout=subprocess.DEVNULL
         )
         print("\nFinished subdomain collection.\n")
 
@@ -40,8 +40,9 @@ class SubdomainEnumerator:
     def check_alive(self):
         print("checking which subdomains are alive...")
         subprocess.run(
-            ["dnsx", "-l", f"domains-{self.domain_name}.txt", "-o", f"alive-{self.domain_name}.txt"],
-            check=True
+            ["dnsx", "-l", f"domains-{self.domain_name}.txt", "-o", f"alive-{self.domain_name}.txt", "-silent"],
+            check=True,
+            stdout=subprocess.DEVNULL
         )
         print("\nFinished checking alive subdomains.\n")
 
@@ -71,8 +72,3 @@ class SubdomainEnumerator:
             )
         print("\nFinished checking accessible subdomains.\n")
 
-
-
-if __name__ == "__main__":
-    enumerator = SubdomainEnumerator()
-    enumerator.run()
