@@ -9,9 +9,8 @@ This is the roadmap for the pyhorizon project. While I say roadmap it is more li
 - technology footprinting
 
 ## To-do changes to existing features:
-- change interactive input into argparse setup. this will make it easier to use and allows me to pass flags.
 - add dependency / tool checks.
 - catch and log errors
 
 ## Completed:
-Nothing yet XD
+- change interactive input into argparse setup. this will make it easier to use and allows me to pass flags.
