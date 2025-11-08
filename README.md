@@ -23,5 +23,5 @@ This tool is built for educational, ethical, legal, and responsible use only. Do
 
 You are welcome to create your own tools based on my tool, but please do provide proper credit when using my code, and I also appreciate it if you let me know that you're using it!
 
-## statement on generative AI usage
+## Statement on generative AI usage
 Since one of the main reasons this project exists is because I want to learn from it I will not, or barely, be using generative AI. The code in this project will all be hand-written, with the exception of some autocompletes from github copilot in VSCode (this will generally not be more than finishing a line I was typing). Outside of this all the code will be manually written, as otherwise it would defeat the point of this project.
