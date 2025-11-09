@@ -8,8 +8,13 @@ class ControlSuite:
         args = ArgManager().parser.parse_args()
         self.config = ConfigManager(
             target = args.target,
-            verbosity = args.verbosity,
-            silent = args.silent
+            verbosity = (
+                -1 if args.silent else args.verbosity
+            ),
+            silent = args.silent,
+            mode = args.mode,
+            source = args.source,
+            keep_temp = args.keep_temp
         )
         
     def run(self):
@@ -20,3 +25,4 @@ class ControlSuite:
 
     def run_SubdomainEnumerator(self):
         SubdomainEnumerator(self.config).run()
+    

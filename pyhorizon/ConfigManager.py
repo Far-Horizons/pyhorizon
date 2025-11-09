@@ -4,7 +4,8 @@ from dataclasses import dataclass
 @dataclass(frozen=True)
 class ConfigManager:
     target: str # mandatory!
-    silent: bool = False # default arg = False
-    if silent: verbosity: int = -1
-    else: verbosity: int = 0 # default arg = 0
-
+    mode: str = "full" # defaults to "full"
+    verbosity: int = 0
+    silent: bool = False
+    source: str = "all"
+    keep_temp: bool = False

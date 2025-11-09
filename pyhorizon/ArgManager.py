@@ -24,6 +24,27 @@ class ArgManager:
         self.parser.add_argument( #set silent mode
             "-s", "--silent",
             default=False,
-            action="store_true",
-            help="Run in silent mode, which gives no output to the console (this is the same as setting verbosity to -1)"
+            action='store_true',
+            help="Run in silent mode, which gives no output to the console (actually just sets the verbosity to -1)"
+        )
+
+        self.parser.add_argument( #set the mode
+            "-m", "--mode",
+            choices=["subenum", "full"], #more choices can be added later
+            default="full",
+            help="Set the mode of operation for the tool (default: full)"
+        )
+
+        self.parser.add_argument(
+            "--source",
+            choices=["all", "subfinder", "findomain"], # currently subfinder is the only available source
+            default="all",
+            help="Set the source for subdomain enumeration (default: all)"
+        )
+
+        self.parser.add_argument(
+            "-k", "--keep-temp",
+            default=False,
+            action='store_true',
+            help="Keep temporary files created during execution"
         )
