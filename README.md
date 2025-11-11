@@ -9,6 +9,15 @@ I started this project for 2 reasons: I want to improve my coding skills, and I 
 
 For now my plan is to create this tool to be as modular as I can make it, using an object-oriented approach. This way the tool will be easier to modify, and it's parts will be easier to re-use in future tools.
 
+## Dependencies
+The tool is built to use other tools through Python subprocesses, mainly due to me not having the knowledge to build tools similar to those used and because I want to avoid any potential issues from re-using the code written by other people.
+
+Therefore it is required you have the following tools installed and preferably up to date:
+- Subfinder (https://github.com/projectdiscovery/subfinder)
+- Findomain (https://github.com/Findomain/Findomain)
+- DNSX (https://github.com/projectdiscovery/dnsx)
+- ffuf (https://github.com/ffuf/ffuf)
+
 ## Disclaimer
 Don't expect super high-quality code, or innovative new methodologies from this project (at least for now) as I am not an expert coder or bug hunter by any means. I am doing this to learn!
 Feedback about my code is however quite welcome, granted that the feedback is constructive. Feel free to tell me my code is shit, but if you do please also tell me WHY it is shit and how I can improve it!
