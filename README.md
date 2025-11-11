@@ -10,7 +10,7 @@ I started this project for 2 reasons: I want to improve my coding skills, and I 
 For now my plan is to create this tool to be as modular as I can make it, using an object-oriented approach. This way the tool will be easier to modify, and it's parts will be easier to re-use in future tools.
 
 ## Dependencies
-The tool is built to use other tools through Python subprocesses, mainly due to me not having the knowledge to build tools similar to those used and because I want to avoid any potential issues from re-using the code written by other people.
+Pyhorizon is built to use other tools through Python subprocesses, mainly due to me not having the knowledge to build tools similar to those used and because I want to avoid any potential issues from re-using the code written by other people.
 
 Therefore it is required you have the following tools installed and preferably up to date:
 - Subfinder (https://github.com/projectdiscovery/subfinder)
