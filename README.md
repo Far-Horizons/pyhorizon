@@ -1,6 +1,10 @@
 # pyhorizon
 A custom python program that integrates multiple tools into one easy to use recon tool. This is my first cybersec tool, and is still in early stages of development.
 
+# STOPPED DEVELOPMENT
+THIS PROJECT IS NOW DEAD, AS I HAVE STARTED A NEW PROJECT THAT DOES THE SAME AND MORE (MAINLY AUTOMATIC MONITORING).
+SEE https://github.com/Far-Horizons/Argus FOR THE NEW PROJECT
+
 ## About me
 I am a first-year computer science student, and I enjoy doing bug bounty. I am still a beginner in this field, but have found a few vulnerabilities (granted, very boring ones).
 
